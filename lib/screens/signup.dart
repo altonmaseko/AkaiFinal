@@ -59,13 +59,13 @@ class _SignupScreenState extends State<SignupScreen> {
   void initState() {
     super.initState();
     // Default values ==============
-    _firstNameController.text = "ExampleName";
-    _lastNameController.text = "ExampleSurname";
-    _emailController.text = "altonmaseko1000@gmail.com";
-    _phoneNumberController.text = "0677716689";
-    _passwordController.text = "Password123**";
-    _rePasswordController.text = "Password123**";
-    _idController.text = "0310240640089";
+    // _firstNameController.text = "ExampleName";
+    // _lastNameController.text = "ExampleSurname";
+    // _emailController.text = "altonmaseko1000@gmail.com";
+    // _phoneNumberController.text = "0677716689";
+    // _passwordController.text = "Password123**";
+    // _rePasswordController.text = "Password123**";
+    // _idController.text = "0310240640089";
 
     // Default values ====================
     _firstNameFocusNode
