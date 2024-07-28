@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:akai/screens/akai_chat.dart';
 import 'package:akai/screens/map_receiver.dart';
 import 'package:akai/screens/map_receiver_accept_page.dart';
@@ -23,8 +22,8 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'screens/calendar.dart';
 import 'screens/links.dart';
 import 'screens/profile.dart';
-import 'screens/tester.dart';
-import 'screens/maps_page.dart';
+// import 'screens/tester.dart';
+// import 'screens/maps_page.dart';
 import 'package:http/http.dart' as http;
 
 final navigatorKey = GlobalKey<NavigatorState>();
