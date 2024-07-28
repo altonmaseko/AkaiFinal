@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default notification channel ID -->
+    <string name="default_notification_channel_id">default_channel_id</string>
+    <!-- Optional: Customize the notification color -->
+    <color name="notification_color">#FF0000</color>
+</resources>
