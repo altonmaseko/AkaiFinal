@@ -54,8 +54,8 @@ class FirebaseApi {
       debugPrint(
           'NOTIFICATION [App opened and was not running]: ${message!.notification!.body}');
 
-      selectedIndex = 0; // [working]
-      showMapPopUp = true; // [working]
+      // selectedIndex = 0; // [working]
+      // showMapPopUp = true; // [working]
 
       // final RemoteMessage mockMessage = RemoteMessage(
       //   data: {

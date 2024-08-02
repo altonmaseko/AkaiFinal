@@ -36,18 +36,19 @@ class _MapReceiverPageState extends State<MapReceiverPage> {
   var firstname = "alton";
   var phone = "0123456789";
 
+  var data;
   @override
   Widget build(BuildContext context) {
+    print("MAP RECEIVER START OF BUILD");
+
     // Retrieve the arguments which include the RemoteMessage
     final RemoteMessage message =
         ModalRoute.of(context)?.settings.arguments as RemoteMessage;
 
     // Access data from the message
-    final Map<String, dynamic> data = message.data;
+    data = message.data;
 
-    firstname = data['firstname'];
-    phone = data['phone'];
-
+    print("MAP RECEIVER START OF RETURN IN BUILD");
     return Scaffold(
       appBar: AppBar(
         title: Text("Help an Akai mate"),
@@ -142,10 +143,6 @@ class _MapReceiverPageState extends State<MapReceiverPage> {
 
     // OLS
 
-    String requesterName = "Sweety Flowers";
-
-    String requesterPhoneNumber = '0677716689';
-
 // HTTP ==========
     String url = baseUrl + "api/notifications/sendacceptnotification";
     final uri = Uri.parse(url);
@@ -163,17 +160,20 @@ class _MapReceiverPageState extends State<MapReceiverPage> {
       "id": _myBox.get('id'),
       "email": _myBox.get('email'),
       "phone": _myBox.get('phone'),
-      "FCMToken": _myBox.get('fcm'),
+      // "FCMToken": _myBox.get('fcm'),
+      "FCMToken": data['FCMToken'],
     };
 
+    var response;
     try {
-      final response = await http.post(
+      response = await http.post(
         uri,
         headers: headers,
         body: jsonEncode(body),
       );
     } catch (e) {
       print("Error when trying to accept");
+      print(response.statusCode);
       showPopUp(context,
           height: 200, widgets: [Text("Sorry could not accept")]);
     }
@@ -182,7 +182,8 @@ class _MapReceiverPageState extends State<MapReceiverPage> {
     double longitude = _myBox.get('longitude')!;
     double latitude = _myBox.get('latitude')!;
 
-    LatLng requesterLocation = LatLng(latitude, longitude);
+    LatLng requesterLocation =
+        LatLng(double.parse(data['latitude']), double.parse(data['longitude']));
 
     Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(

@@ -23,42 +23,42 @@ final _firebaseMessaging = FirebaseMessaging.instance;
 
 class _RequesterNextPageState extends State<RequesterNextPage> {
   List<Widget> people = [
-    Container(
-      margin: EdgeInsets.only(top: 10, bottom: 10, left: 20, right: 20),
-      color: TColors.lilac,
-      width: double.infinity,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
-            children: [
-              Text("Alton Maseko"),
-              Text("0123456789"),
-            ],
-          ),
-          IconButton(
-              onPressed: () async {
-                var phoneNumber = "02342934234";
-                String requesterPhoneNumber = phoneNumber;
-                if (phoneNumber.startsWith('0')) {
-                  // Replace the first occurrence of '0' with '+27'
-                  requesterPhoneNumber = phoneNumber.replaceFirst('0', '+27');
-                }
-                // END: FORMAT PHONENUMBER =========================
+    // Container(
+    //   margin: EdgeInsets.only(top: 10, bottom: 10, left: 20, right: 20),
+    //   color: TColors.lilac,
+    //   width: double.infinity,
+    //   child: Row(
+    //     mainAxisAlignment: MainAxisAlignment.center,
+    //     children: [
+    //       Column(
+    //         children: [
+    //           Text("Name Surname"),
+    //           Text("0123456789"),
+    //         ],
+    //       ),
+    //       IconButton(
+    //           onPressed: () async {
+    //             var phoneNumber = "02342934234";
+    //             String requesterPhoneNumber = phoneNumber;
+    //             if (phoneNumber.startsWith('0')) {
+    //               // Replace the first occurrence of '0' with '+27'
+    //               requesterPhoneNumber = phoneNumber.replaceFirst('0', '+27');
+    //             }
+    //             // END: FORMAT PHONENUMBER =========================
 
-                final whatsappUrl =
-                    "whatsapp://send?phone=${requesterPhoneNumber}";
+    //             final whatsappUrl =
+    //                 "whatsapp://send?phone=${requesterPhoneNumber}";
 
-                if (await canLaunchUrlString(whatsappUrl)) {
-                  await launchUrlString(whatsappUrl);
-                } else {
-                  print("Could not open WhatsApp");
-                }
-              },
-              icon: Icon(FontAwesomeIcons.whatsapp))
-        ],
-      ),
-    )
+    //             if (await canLaunchUrlString(whatsappUrl)) {
+    //               await launchUrlString(whatsappUrl);
+    //             } else {
+    //               print("Could not open WhatsApp");
+    //             }
+    //           },
+    //           icon: Icon(FontAwesomeIcons.whatsapp))
+    //     ],
+    //   ),
+    // )
   ];
   void openWhatsApp() {}
 
@@ -68,6 +68,8 @@ class _RequesterNextPageState extends State<RequesterNextPage> {
       // [WORKING]
       debugPrint(
           'NOTIFICATION [App in FOREGROUND]: ${message.notification!.body}');
+
+      print("ACCEPT NOTIFICATION RECEIVED");
 
       // Access the data payload
       String firstname = message.data['firstname'];
@@ -82,6 +84,12 @@ class _RequesterNextPageState extends State<RequesterNextPage> {
     });
 
     // Background message
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    initPushNotifications();
   }
 
   @override

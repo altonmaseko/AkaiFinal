@@ -51,6 +51,7 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
+    print("app.dart BUILD");
     return MaterialApp(
       key: _appKey,
       routes: {
@@ -60,7 +61,7 @@ class _AppState extends State<App> {
         'mapspage': (context) => MapStartPage(),
         'oldmapspage': (context) => const OldGoogleMapPage(),
         'app': (context) => MyHomePage(),
-        'mapreceiver': (context) => MapReceiverPage(),
+        'mapreceiver': (context) => const MapReceiverPage(),
         'requesternextpage': (context) => RequesterNextPage(),
         'chatpage': (context) => Chat()
       },
