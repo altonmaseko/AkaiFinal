@@ -18,12 +18,12 @@
 
 <p align="center">
   <img src="assets/screenshots/calender_screenshot.jpg" alt="Calender" width="300"/>
-  <img src="assets/screenshots/calender_popup_screenshot.jpg" alt="PopUp" width="200"/>
+  <img src="assets/screenshots/calender_popup_screenshot.jpg" alt="PopUp" width="300"/>
 </p>
 
 <p align="center">
   <img src="assets/screenshots/helpful_links_screenshot.jpg" alt="Helpful Links" width="300"/>
-  <img src="assets/screenshots/profile_screenshot.jpg" alt="Profile" width="200"/>
+  <img src="assets/screenshots/profile_screenshot.jpg" alt="Profile" width="300"/>
 </p>
 
 <!-- ![Calender](assets/screenshots/calender_screenshot.jpg)
